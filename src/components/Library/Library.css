@@ -1,0 +1,114 @@
+.library-container {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  margin-top: 30px;
+  box-shadow: 0 4px 20px rgba(37, 117, 252, 0.3);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.library-header {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 25px;
+  color: #ffffff;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  letter-spacing: 1px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(37, 117, 252, 0.3);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.library-title {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.library-song {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.library-song::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, transparent 70%);
+  transform: scale(0);
+  transition: transform 0.4s ease;
+}
+
+.library-song:hover::before {
+  transform: scale(1);
+}
+
+.library-song:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.library-info {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.library-artist {
+  color: #ffffff;
+  font-size: 1.1em;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.library-meta {
+  color: #ffffff;
+  font-size: 0.95em;
+  opacity: 0.85;
+}
+
+.library-empty {
+  text-align: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  font-size: 1.2em;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
